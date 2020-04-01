@@ -1,5 +1,22 @@
 {
-    "engine_version": "cocos2d-x-3.17.2", 
-    "has_native": true, 
-    "project_type": "js"
+    "project_type": "js",
+
+    "debugMode"     : 1,
+
+    "showFPS"       : true,
+
+    "frameRate"     : 60,
+
+    "noCache"       : false,
+
+    "id"            : "gameCanvas",
+
+    "renderMode"    : 0,
+
+    "engineDir"     : "frameworks/cocos2d-html5/",
+
+    "modules"       : ["cocos2d"],
+
+    "jsList"        : [
+    ]
 }

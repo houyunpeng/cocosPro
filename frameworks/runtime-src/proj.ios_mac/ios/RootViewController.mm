@@ -57,6 +57,7 @@
     
     // Set EAGLView as view of RootViewController
     self.view = eaglView;
+    
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
