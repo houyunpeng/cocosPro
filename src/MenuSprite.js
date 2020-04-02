@@ -1,8 +1,9 @@
 
 
-var  MeunSprite = cc.Sprite.extend({
+var MenuSprite = cc.Sprite.extend({
 
-    index : -1,
+    index : 0,
+    scrollView:null,
 
     ctor:function (index) {
         this._super();
@@ -19,13 +20,13 @@ var  MeunSprite = cc.Sprite.extend({
             this.setTextureRect(cc.rect(0,0,itemWidth,itemHeight));
 
 
-            var color = HYP.config[i].color;
-            var labelColor = HYP.config[i].labelColor;
+            var color = HYP.config[this.index].color;
+            var labelColor = HYP.config[this.index].labelColor;
 
             this.setColor(color);
 
             this.setAnchorPoint(cc.p(0,0));
-            this.setPosition(i%2 * itemWidth,Math.floor(i/2) * itemHeight);
+            this.setPosition(this.index%2 * itemWidth,Math.floor(this.index/2) * itemHeight);
 
             var obj = HYP.config[this.index];
             var text = new cc.LabelTTF(obj.name,"",50);
@@ -35,58 +36,82 @@ var  MeunSprite = cc.Sprite.extend({
             this.addChild(text);
 
 
-            cc.eventManager.addListener(this.touchListener(),this);
+            cc.eventManager.addListener( {
+                event : cc.EventListener.TOUCH_ONE_BY_ONE,
+                target : this,
+                swallowTouches:true,
+                onTouchBegan:this.touchBegan,
+                onTouchMoved:this.touchMoved,
+                onTouchCancelled:this.touchCanceled,
+                onTouchEnded:this.touchEnded
+            },this);
 
 
 
     },
-    touchListener:function(){
-        return cc.EventListener.create({
-            event:cc.EventListener.TOUCH_ONE_BY_ONE,
-            target:this,
-            swallowTouches:true,
-            onTouchBegan:function(touch,event) {
 
-                var target = event.getCurrentTarget();
-                cc.log(target);
+    touchBegan:function(touch,event){
 
-                var size = target.getContentSize();
+        var target = event.getCurrentTarget();
 
-                var itemHeight = size.height / 4;
+        var point = target.convertToNodeSpace(touch.getLocation());
+        var rect = cc.rect(0,0,target.getContentSize().width,target.getContentSize().height);
 
-                var scrollView = new ccui.ScrollView();
-                target.addChild(scrollView, target.getLocalZOrder() + 100);
-                scrollView.setColor(cc.color(220, 220, 220));
-                scrollView.setContentSize(target.getContentSize());
-                scrollView.setDirection(ccui.ScrollView.DIR_VERTICAL);
-                scrollView.setInnerContainerSize(cc.size(size.width, itemHeight * HYP.config[this.index].items.length));
-                scrollView.setInertiaScrollEnabled(true);
-                scrollView.setBounceEnabled(true);
-                scrollView.setTouchEnabled(true);
-                scrollView.setAnchorPoint(cc.p(0.5, 0.5));
-                scrollView.setPosition(target.getContentSize().width / 2, target.getContentSize().height / 2);
-                scrollView.y = size.height;
-                var obj = HYP.config[i].items;
-                for (var i = 0; i < obj.length; i++) {
-                    var itemObj = obj[i];
-                    var textItem = new ccui.Text(itemObj.name, "", 32);
-                    scrollView.addChild(textItem);
-                    textItem.setAnchorPoint(cc.p(0.5, 0));
-                    textItem.setPosition(size.width / 2, itemHeight * i);
+        if (!cc.rectContainsPoint(rect,point)){
+            cc.log("点击了外面");
+            return false;
+        }
 
 
-                }
 
-                // var action = cc.moveBy(0.24,cc.p(0, -size.height));
-                // scrollView.runAction(action.easing(cc.easeSineIn()));
-
-            },
-            onTouchEnded:function(touch , event) {
-
-            }
-
-        });
+        cc.log(target);
+        target.loadSubitems();
+        return  true;
     },
+    touchEnded:function(touch,event){
+
+    },
+    touchMoved:function(touch,event){
+
+    },
+    touchCanceled:function(touch,event){
+
+    },
+
+
+
+
+    loadSubitems:function () {
+        var size = this.getContentSize();
+        var items = HYP.config[this.index].items;
+        var itemHeight = HYP.subItemHeight;
+
+        var scrollView = new ccui.ScrollView();
+        this.addChild(scrollView, this.getLocalZOrder() + 100);
+        scrollView.setColor(cc.color.GRAY);
+        scrollView.setContentSize(this.getContentSize());
+        scrollView.setDirection(ccui.ScrollView.DIR_VERTICAL);
+
+        var interlHeight = HYP.subItemHeight * items.length;
+
+        scrollView.setInnerContainerSize(cc.size(size.width, interlHeight));
+        scrollView.setInertiaScrollEnabled(true);
+        scrollView.setBounceEnabled(true);
+        scrollView.setTouchEnabled(true);
+
+        // scrollView.setPosition(size.width / 2, size.height / 2);
+        scrollView.y = 0;
+        var obj = HYP.config[this.index].items;
+        for (var i = 0; i < obj.length; i++) {
+            var itemSprite = new MenuItemSprite(obj,i);
+            scrollView.addChild(itemSprite);
+            itemSprite.setAnchorPoint(cc.p(0.5,0));
+            itemSprite.setPosition(cc.p(size.width/2,i*itemHeight));
+
+        }
+        scrollView.scrollToBottom(0.24,true);
+        this.scrollView = scrollView;
+    }
 
 
 

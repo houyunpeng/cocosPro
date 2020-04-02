@@ -1,6 +1,5 @@
 
 
-
 var MainMenuLayer = cc.Layer.extend({
     configData : null,
    ctor:function () {

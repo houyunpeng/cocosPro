@@ -14,7 +14,9 @@
     "jsList" : [
         "src/resource.js",
         "src/config.js",
-        "src/MeunSprite.js",
+        "src/GamePlayerLayer.js",
+        "src/MenuItemSprite.js",
+        "src/MenuSprite.js",
         "src/MainMenu.js"
     ]
 }

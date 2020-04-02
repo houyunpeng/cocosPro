@@ -2,7 +2,7 @@ var HYP = {
 
 };
 
-HYP.size = cc.size(200,200);
+
 
 HYP.config = [
     {
@@ -103,3 +103,8 @@ HYP.config = [
         ]
     },
 ];
+
+
+HYP.itemWidth = cc.winSize.width/2;
+HYP.itemHeight = cc.winSize.height / (HYP.config.length / 2);
+HYP.subItemHeight = HYP.itemHeight / 8;
