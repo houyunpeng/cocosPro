@@ -1,6 +1,7 @@
 var MenuItemSprite = cc.Sprite.extend({
     index : null,
     itemObjs : null,
+    touchBeginPoint:0,
     ctor:function (configObj,index) {
         this._super();
         this.itemObjs = configObj;
@@ -31,10 +32,20 @@ var MenuItemSprite = cc.Sprite.extend({
             return false;
         }
         cc.log("touched item sprite");
+        this.touchBeginPoint = point;
         return true;
     },
     touchEnded:function(touch,event){
+        var target = event.getCurrentTarget();
+
+        var point = target.convertToNodeSpace(touch.getLocation());
         cc.log("touched ended item sprite");
+
+        if (Math.abs(point.y - this.touchBeginPoint.y) > HYP.subItemHeight/2 ){
+            return true;
+        }
+
+
         var scene = new cc.Scene();
         var gameLayer = new GamePlayerLayer();
         var num = Math.floor(Math.random() % 4);

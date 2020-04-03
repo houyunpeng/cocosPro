@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f2a7c9e-f6aa-41ee-985f-00439db923aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/frameworks/runtime-src/proj.ios_mac/CocosPro.xcodeproj/project.xcworkspace/xcuserdata/hyp.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/frameworks/runtime-src/proj.ios_mac/CocosPro.xcodeproj/project.xcworkspace/xcuserdata/hyp.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuSprite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuSprite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuItemSprite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuItemSprite.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MenuItemSprite.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+            <state relative-caret-position="751">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
@@ -52,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GamePlayerLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -143,15 +140,15 @@
         <option value="$PROJECT_DIR$/src/MenuSprite.js" />
         <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/project.json" />
-        <option value="$PROJECT_DIR$/src/MenuItemSprite.js" />
         <option value="$PROJECT_DIR$/src/GamePlayerLayer.js" />
         <option value="$PROJECT_DIR$/src/GameItem.js" />
+        <option value="$PROJECT_DIR$/src/MenuItemSprite.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="43" />
+    <option name="x" value="52" />
+    <option name="y" value="23" />
     <option name="width" value="1515" />
     <option name="height" value="987" />
   </component>
@@ -232,16 +229,15 @@
       <workItem from="1585743399972" duration="1903000" />
       <workItem from="1585745547217" duration="2000" />
       <workItem from="1585745618308" duration="4818000" />
-      <workItem from="1585792485225" duration="11583000" />
+      <workItem from="1585792485225" duration="12886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16401000" />
+    <option name="totallyTimeSpent" value="17704000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="43" width="1515" height="987" extended-state="0" />
-    <editor active="true" />
+    <frame x="52" y="23" width="1515" height="987" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1352075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -358,17 +354,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MenuItemSprite.js">
+    <entry file="file://$PROJECT_DIR$/src/GamePlayerLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GamePlayerLayer.js">
+    <entry file="file://$PROJECT_DIR$/src/MenuItemSprite.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="751">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
