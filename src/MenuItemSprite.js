@@ -15,7 +15,7 @@ var MenuItemSprite = cc.Sprite.extend({
       cc.eventManager.addListener({
           event:cc.EventListener.TOUCH_ONE_BY_ONE,
           target:this,
-          swallowTouches:true,
+          swallowTouches:false,
           onTouchBegan:this.touchBegan,
           onTouchEnded:this.touchEnded
       },this);
@@ -47,7 +47,8 @@ var MenuItemSprite = cc.Sprite.extend({
 
 
         var scene = new cc.Scene();
-        var gameLayer = new GamePlayerLayer();
+        var gameLayer = new GamePlayerLayer(30,4);
+        scene.addChild(gameLayer);
         var num = Math.floor(Math.random() % 4);
         var finalScene = null;
         switch (num) {

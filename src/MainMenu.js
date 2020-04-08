@@ -10,6 +10,9 @@ var MainMenuLayer = cc.Layer.extend({
         this.loadJsonData();
         this.setupChildren();
         // this.loadDebug();
+
+
+
    },
 
     loadScrollTest:function(){

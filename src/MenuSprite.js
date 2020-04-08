@@ -29,7 +29,7 @@ var MenuSprite = cc.Sprite.extend({
             this.setPosition(this.index%2 * itemWidth,Math.floor(this.index/2) * itemHeight);
 
             var obj = HYP.config[this.index];
-            var text = new cc.LabelTTF(obj.name,"",50);
+            var text = new cc.LabelTTF(obj.name,"a",50);
             text.setColor(labelColor);
 
             text.setPosition(cc.p(itemWidth/2,itemHeight/2));
